@@ -2,7 +2,7 @@
 #modules
 #################################################
 
-from colorama import Fore,init
+from colorama import Fore
 from pyfiglet import figlet_format as font
 import os,sys,time,socket,requests,random
 #################################################
@@ -10,11 +10,17 @@ import os,sys,time,socket,requests,random
 ####################################################
 # the admin finder
 ####################################################
+printf=os.uname()
+pack=()
+if 'Linux' in printf:
+    pack=str("clear")
+elif 'Windows' in printf:
+    pack=str('cls')
 try:
     def _Run_():
         try:
             admin=open('admin.txt').read().split()
-            os.system('cls'or'clear')
+            os.system(str(pack))
             print(font('GuardIran.org'))
             url=input(Fore.LIGHTBLUE_EX+' [+] '+Fore.BLUE+'Enter URL from Target : ')
 
@@ -39,7 +45,7 @@ except:
 ####################################################
 try:
     def login():
-        os.system('cls'or'clear')
+        os.system(str(pack))
         print(font('GuardIran.org'))
         url_login=input(Fore.LIGHTBLUE_EX+' [+] '+Fore.BLUE+'Enter URL from Target : ')
         print(' [1] my username list\n [2] defalt')
@@ -79,7 +85,7 @@ except:
 # bypass cloud Flare
 ################################################
 def bypass():
-    os.system('cls'or'clear')
+    os.system(str(pack))
     print(font('GuardIran.org'))
     try:
         url_bypass=input(Fore.LIGHTBLUE_EX+' [+] '+Fore.BLUE+'Enter URL from Target : ')
@@ -104,6 +110,7 @@ def bypass():
                     re=requests.get('https://'+thehost)
                 except KeyboardInterrupt:
                         input(' [~] press Enter to Exit...')
+                        start()
                 except:
                     pass
                 if re.status_code!=404:
@@ -124,6 +131,7 @@ def bypass():
 
         except KeyboardInterrupt:
             input(' [+] Press Enter to exit')
+            start()
         #except socket.gaierror:
             #pass
 
@@ -136,7 +144,7 @@ def bypass():
 # DDos
 ###############################################
 def DDOS():
-    os.system('cls'or'clear')
+    os.system(str(pack))
     print(font('GuardIran.org'))
     ip=input(' [+] please Enter IP address : ')
     port=input(' [+] on port : ')
@@ -153,7 +161,7 @@ def DDOS():
 def start():
     while True:
         try:
-            os.system('cls'or'clear')
+            os.system(str(pack))
             print(font('GuardIran.org'))
             print('\n   ___    creator=>https://guardiran.org/profiles/31337-sparta/    ___')
             time.sleep(4)
