@@ -2,8 +2,6 @@
 #modules
 #################################################
 
-
-from Butcher.run import start
 from colorama import Fore,init
 from pyfiglet import figlet_format as font
 import os,sys,time,socket,requests,random
